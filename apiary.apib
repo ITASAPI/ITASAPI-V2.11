@@ -4392,9 +4392,7 @@ The CommodityFullCode is a five part key made up of the following values seperat
 ## PayableOnPrePayment (object)
 + DocumentBody (required, DocumentDetails)
 + PrePaymentDetails (required, PrePaymentDetails)
-+ AlternateCurrencyDetails (OtherCcyPayDetails)
-+ BankDetails (required, AccountPostingBankPayDetails)
-+ CounterpartyDetails (required, CounterpartyDetails)
++ AccountDetails (required, array [AccountPostingBankPayDetails, AccountPostingRecDetails])
 
 ## PayableManual (object)
 + DocumentBody (required, DocumentDetails)
@@ -4403,7 +4401,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 ## PayableOnAccount (object)
 + DocumentBody (required, DocumentDetails)
 + BankDetails (required, AccountPostingBankPayDetails)
-+ CashCurrencyDetails (OtherCcyDetails)
 + TransactionsToMatch (required, array [OnAccountPayDetailsLess])
 + OtherCosts (array [AccountPostingPayDetailsLess])
 
@@ -4605,16 +4602,13 @@ The CommodityFullCode is a five part key made up of the following values seperat
 ## ReceivableOnAccount (object)
 + DocumentBody (required, DocumentDetails)
 + BankDetails (required, AccountPostingBankRecDetails)
-+ CashCurrencyDetails (OtherCcyRecDetails)
 + TransactionsToMatch (required, array [OnAccountRecDetailsLess])
 + OtherCosts (array [AccountPostingRecDetailsLess])
 
 ## ReceivableOnPrePayment (object)
 + DocumentBody (required, DocumentDetails)
 + PrePaymentDetails (required, PrePaymentDetails)
-+ AlternateCurrencyDetails (OtherCcyRecDetails)
-+ BankDetails (required, AccountPostingBankRecDetails)
-+ CounterpartyDetails (required, CounterpartyRecDetails)
++ AccountDetails (required, array [AccountPostingBankRecDetails, AccountPostingPayDetails])
 
 ## ResultsMessage (object)
 + RequestId: 10001 (string)
